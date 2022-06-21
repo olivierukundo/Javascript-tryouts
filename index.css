@@ -1,0 +1,20 @@
+.submit-btn{
+width: 100%;
+}
+
+
+#shopping_container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#title {
+  text-align: center;
+}
+
+.buttons_container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
