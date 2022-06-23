@@ -1,6 +1,7 @@
+
 document
 .querySelector("#details_form")
-.addEventListener("submit", handleFormSubmit);
+.addEventListener("Submit", handleFormSubmit);
 
 function handleFormSubmit(event){
     event.preventDefault();

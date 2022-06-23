@@ -21,14 +21,14 @@
     <div class="container text-center">
         <div class="row">
             <div class="col-md-2">
-                <form id="details_form">
+                <form id="details_form">-
                     <div class="form_group">
-                        <label for="name">name</label>
+                        <label for="name">Name</label>
                         <input required minilength="3" type="text" class="form control" id="name"
                         placeholder="Name of the food or drink">
                     </div>
                     <div class="form_group">
-                        <label for="quantity">quantity </label>
+                        <label for="quantity">Quantity </label>
                         <input required minilength="3" type="text" class="form control" id="quantity"
                         placeholder="quantity do you want?">
                     </div>
@@ -42,16 +42,17 @@
                         <input required minilength= "2" type="text" class="form control" id="description"
                         placeholder="describe how you want it?">
                     </div>
-                    <button type="Submit" class="btn btn-primary submit-btn">Add to list</button>
-
+                    <button onclick="function handleFormSubmit(event)" type="Submit" class="btn btn-primary submit-btn">Add to list</button>
+                </form>
+            </div>
                     <div class="col-md-9">
                         <h3 id="title">Any Other information</h3>
                         <div id="shopping_container">
 
                         </div>
                     </div>
-            </div>
         </div>
+    </div>    
    <script src="script.js"></script>
 </body>
 </html>
