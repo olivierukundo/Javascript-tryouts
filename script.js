@@ -1,6 +1,5 @@
 
-document
-.querySelector("#details_form")
+document.querySelector("#details_form")
 .addEventListener("Submit", handleFormSubmit);
 
 function handleFormSubmit(event){
@@ -27,7 +26,7 @@ if (actualList.children.length === 0){
 document.querySelector("title").innerHTML = "My List";
 }
 
-documentqueryselector("#shopping_container")
+document.queryselector("#shopping_container")
 appendChild(shoppingCard);
 }
 
@@ -146,3 +145,5 @@ function removeProduct(event){
     var card = cardBody.parentElement;
     card.remove(); 
 }
+
+
