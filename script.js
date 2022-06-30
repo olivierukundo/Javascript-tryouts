@@ -1,29 +1,26 @@
+document
+  .querySelector("#details_form")
+  .addEventListener("submit", handleFormSubmit);
 
-var form = document.getElementById("details_form")
+function handleFormSubmit(event) {
+  event.preventDefault();
+  console.log("called");
 
-form.addEventListener("submit", function(event){
-    event.preventDefault();
-});
+  var productName = event.target.elements["name"].value;
+  var productQuantity = event.target.elements["quantity"].value;
+  var productPhoto = event.target.elements["photo"].value;
+  var productDescription = event.target.elements["description"].value;
 
-// did this to try and prevent default i.e refreshing after submitting (the lines above) 
-
-function handleFormSubmit(event){
-    event.preventDefault();
-
-    // creating varaibles that contain all the form values
-    let name = document.forms[0].name.value; 
-    let quantity = document.forms[0].quantity.value; 
-    let photo = document.forms[0].photo.value; 
-    let description = document.forms[0].description.value; 
-    
+  console.log(productDescription);
 
 resetFormValues(event.target);
 
 var shoppingCard = createShoppingCard(
-   name,
-   quantity,
-   photo,
-   description
+   productName,
+   productQuantity,
+   productPhoto,
+   productDescription,
+
 );
 
 var actualList = document.getElementById("shopping_container");
