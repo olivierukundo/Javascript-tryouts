@@ -17,14 +17,6 @@ function handleFormSubmit(event){
     let description = document.forms[0].description.value; 
     
 
-    console.log(name);
-    console.log(quantity);
-    console.log(photo);
-    console.log(description);
-    
-    
-
-
 resetFormValues(event.target);
 
 var shoppingCard = createShoppingCard(
@@ -44,7 +36,7 @@ document.getElementById("title").innerHTML = "My List";
 }
 
 document.getElementById("shopping_container")
-document.appendChild(shoppingCard);
+.appendChild(shoppingCard);
 
 }
     
@@ -72,7 +64,7 @@ img.setAttribute("alt", name);
 
 // if the user doesn't add a photo url, use this constant photo url
 
-var constantPhotoUrl = https://www.stockfood.gr/images/11200239-Grocery-Basket-Full-of-Food;
+var constantPhotoUrl = "C:\Users\desktop\Desktop\js\bball.jpg";
 
 if (photoUrl.length === 0){
     setAttribute("src", constantPhotoUrl);
@@ -91,7 +83,7 @@ cardTitle.setAttribute("class", "card-title");
 cardTitle.innerText = name;
 cardBody.appendChild(cardTitle);
 
-var cardSubtitle = createElement("h6");
+var cardSubtitle = document.createElement("h6");
 cardSubtitle.setAttribute("class", "card-subtitle mb-2 text-muted");
 cardSubtitle.innerText = quantity;
 cardBody.appendChild(cardSubtitle);
@@ -113,13 +105,13 @@ buttonContainer.setAttribute("class", "button_container");
 
 var cardEditBtn = document.createElement("button");
 cardEditBtn.setAttribute("class", "btn btn-warning");
-cardEditBtn.innerText = Edit;
+cardEditBtn.innerText = "Edit";
 cardEditBtn.addEventListener("click", editProduct);
 
 
 var cardDeleteBtn = document.createElement("button");
 cardDeleteBtn.setAttribute("class", "btn btn-danger");
-cardDeleteBtn.innerText = Remove;
+cardDeleteBtn.innerText = "Remove";
 cardDeleteBtn.addEventListener("click", removeProduct);
 
 buttonContainer.appendChild(cardEditBtn);
