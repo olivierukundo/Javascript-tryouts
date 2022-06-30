@@ -1,40 +1,63 @@
 
-document.querySelector("#details_form")
-.addEventListener("Submit", handleFormSubmit);
+var form = document.getElementById("details_form")
+
+form.addEventListener("submit", function(event){
+    event.preventDefault();
+});
+
+// did this to try and prevent default i.e refreshing after submitting (the lines above) 
 
 function handleFormSubmit(event){
     event.preventDefault();
 
-    var productName = event.target.elements["name"].value;
-    var productQuantity = event.target.elements["quantity"].value;
-    var productPhoto = event.target.elements["photo"].value;
-    var productDescription = event.target.elements["description"].value;
+    // creating varaibles that contain all the form values
+    let name = document.forms[0].name.value; 
+    let quantity = document.forms[0].quantity.value; 
+    let photo = document.forms[0].photo.value; 
+    let description = document.forms[0].description.value; 
+    
+
+    console.log(name);
+    console.log(quantity);
+    console.log(photo);
+    console.log(description);
+    
+    
 
 
 resetFormValues(event.target);
 
 var shoppingCard = createShoppingCard(
-    productName,
-    productQuantity,
-    productPhoto,
-    productDescription
+   name,
+   quantity,
+   photo,
+   description
 );
 
-var actualList = document.querySelector("#shopping_container");
+var actualList = document.getElementById("shopping_container");
+
+
+//After creating the first item on the list change fro, Any other... to My list
 
 if (actualList.children.length === 0){
-document.querySelector("title").innerHTML = "My List";
+document.getElementById("title").innerHTML = "My List";
 }
 
-document.queryselector("#shopping_container")
-appendChild(shoppingCard);
+document.getElementById("shopping_container")
+document.appendChild(shoppingCard);
+
 }
+    
+
+// after submitting and creating the card let the form refresh to be able to hold another item
 
 function resetFormValues(form){
     for(var i = 0; i < form.length; i++){
         form.elements[i].value = "";
     }
 }
+
+//styling the card: size,height and display
 
 function createShoppingCard(name, quantity, photoUrl, description){
 var card = document.createElement("div");
@@ -47,7 +70,9 @@ var img = document.createElement("img");
 img.setAttribute("class", "card-img-top");
 img.setAttribute("alt", name);
 
-var constantPhotoUrl = bball.jpg;
+// if the user doesn't add a photo url, use this constant photo url
+
+var constantPhotoUrl = https://www.stockfood.gr/images/11200239-Grocery-Basket-Full-of-Food;
 
 if (photoUrl.length === 0){
     setAttribute("src", constantPhotoUrl);
@@ -67,7 +92,7 @@ cardTitle.innerText = name;
 cardBody.appendChild(cardTitle);
 
 var cardSubtitle = createElement("h6");
-cardSubtitle.setAttribute("class", "card-subtitel mb-2 text-muted");
+cardSubtitle.setAttribute("class", "card-subtitle mb-2 text-muted");
 cardSubtitle.innerText = quantity;
 cardBody.appendChild(cardSubtitle);
 
@@ -80,6 +105,8 @@ if (description !== 0){
 }
 
 
+
+// add bootstrap buttons to the card itself
 var buttonContainer = document.createElement("div");
 buttonContainer.setAttribute("class", "button_container");
 
@@ -107,6 +134,7 @@ return card;
 
 }
 
+// incase the user wants to the a card let them do it as an alert
 function editProduct(event){
     var cardBody = event.target.parentElement.parentElement;
     var title = cardBody.children[0];
